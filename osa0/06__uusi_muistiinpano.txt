@@ -1,0 +1,12 @@
+note over selain:
+Käyttäjä kirjoittaa tekstikenttään 
+jotain ja painaa Tallenna-painiketta
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+palvelin-->selain: HTML status-koodi 201 created
+
+note over palvelin:
+palvelin tallettaisi muistiinpanon
+tietokantaan mikäli sellainen olisi
+end note
