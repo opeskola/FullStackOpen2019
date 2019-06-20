@@ -1,6 +1,6 @@
 const listHelper = require('../utils/list_helper')
 
-describe('total likes', () => {
+describe('favorite blog', () => {
   const emptyList = []
 
   const listWithOneBlog = [
@@ -65,18 +65,27 @@ describe('total likes', () => {
     }
   ]
 
-  test('of empty list is zero', () => {
-    const result = listHelper.totalLikes(emptyList)
-    expect(result).toBe(0)
+  test('of empty list is empty', () => {
+    const result = listHelper.favoriteBlog(emptyList)
+    expect(result).toEqual({})
   })
 
-  test('when list has only one blog equals the likes of that', () => {
-    const result = listHelper.totalLikes(listWithOneBlog)
-    expect(result).toBe(5)
+  test('when list has only one blog equals the blog itself', () => {
+    const result = listHelper.favoriteBlog(listWithOneBlog)
+    expect(result).toEqual({
+      title: 'Go To Statement Considered Harmful',
+      author: 'Edsger W. Dijkstra',
+      likes: 5
+    })
   })
 
   test('of a bigger list is calculater right', () => {
-    const result = listHelper.totalLikes(listWithManyBlogs)
-    expect(result).toBe(36)
+    const result = listHelper.favoriteBlog(listWithManyBlogs)
+    expect(result).toEqual({
+      title: 'Canonical string reduction',
+      author: 'Edsger W. Dijkstra',
+      likes: 12
+    })
   })
 })
+
