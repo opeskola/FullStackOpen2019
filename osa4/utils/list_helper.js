@@ -22,9 +22,27 @@ const favoriteBlog = (blogs) => {
     return {}
   }
   else if (blogs.length === 1) {
-    return blogs.map(item => item)
+    // change array to object
+    var obj = blogs.reduce(function(acc, cur, i) {
+      acc[i] = cur
+      return acc
+    }, {})
+    console.log(obj[0])
+    // filter only some fields to resultset
+    return (({ title, author, likes }) => ({ title, author, likes }))(obj[0])
   }
-  return -1
+  else if (blogs.length > 1) {
+    var maxLikes = Math.max.apply(Math, blogs.map(function(o) { return o.likes }))
+    var filteredBlogs = blogs.filter(function(blog){
+      return blog.likes === maxLikes
+    })
+    var arrToObj = filteredBlogs.reduce(function(acc, cur, i) {
+      acc[i] = cur
+      return acc
+    }, {})
+    console.log(arrToObj[0])
+    return (({ title, author, likes }) => ({ title, author, likes }))(arrToObj[0])
+  }
 }
 
 module.exports = {
