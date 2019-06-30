@@ -7,7 +7,7 @@ const totalLikes = (blogs) => {
     return 0
   }
   else if (blogs.length > 0) {
-    console.log(blogs.map(item => item.likes))
+    //console.log(blogs.map(item => item.likes))
     const reducer = (sum, item) => {
       return sum + item.likes
     }
@@ -27,7 +27,7 @@ const favoriteBlog = (blogs) => {
       acc[i] = cur
       return acc
     }, {})
-    console.log(obj[0])
+    //console.log(obj[0])
     // filter only some fields to resultset
     return (({ title, author, likes }) => ({ title, author, likes }))(obj[0])
   }
@@ -40,7 +40,7 @@ const favoriteBlog = (blogs) => {
       acc[i] = cur
       return acc
     }, {})
-    console.log(arrToObj[0])
+    //console.log(arrToObj[0])
     return (({ title, author, likes }) => ({ title, author, likes }))(arrToObj[0])
   }
 }
