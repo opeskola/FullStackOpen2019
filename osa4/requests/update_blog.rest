@@ -1,0 +1,6 @@
+PUT http://localhost:3003/api/blogs/5d0815357c9ce52a639daab7
+Content-Type: application/json
+
+{
+  "title": "fifth blog", "author": "Jouni Mikkonen", "url": "http://www.eekkrrrreesess.com", "likes": 100
+}

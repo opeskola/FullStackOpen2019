@@ -98,8 +98,6 @@ test('if likes value is not given, its value will be 0', async () => {
     }
   })
 
-  console.log(N)
-
   await api
     .post('/api/blogs')
     .send(newBlog)
@@ -114,8 +112,6 @@ test('if likes value is not given, its value will be 0', async () => {
       N_post = N_post + 1
     }
   })
-
-  console.log(N_post)
 
   expect(resAfterPost.body.length).toBe(initialBlogs.length + 1)
   expect(N_post).toBe(N + 1)
