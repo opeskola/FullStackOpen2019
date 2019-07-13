@@ -1,6 +1,10 @@
 POST http://localhost:3003/api/blogs 
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtla2UiLCJpZCI6IjVkMmEzY2U0OGU5Y2E5MjUwZWJmYWY1NyIsImlhdCI6MTU2MzA1MDc1NX0.KGlLeG7iBr0hk4qbbLCSL82FlFMmW8fVdn3g5Aj_1Lg
 
 {
-"title": "js is not funny", "author": "Funny Guy", "url": "http://www.eekkrrrreesessss.com", "likes": 3
+  "title": "Ubuntu is best", 
+  "author": "Jens Jeremies", 
+  "url": "http://www.eekkreeeeesdsdasassssssseeeeeeeeeereeaeeaass.com", 
+  "likes": 9
 }
