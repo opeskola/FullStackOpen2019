@@ -2,6 +2,7 @@ import React from 'react';
 import AnecdoteForm from './components/AnecdoteForm'
 
 const App = (props) => {
+  
   const anecdotes = props.store.getState()
 
   const vote = (id) => {
@@ -17,9 +18,10 @@ const App = (props) => {
       }
     }
   }
+  
 
   return (
-    <div>
+    <div>      
       <h2>Anecdotes</h2>
       {anecdotes.map(anecdote =>
         <div key={anecdote.id}>
